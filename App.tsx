@@ -1,41 +1,34 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Text,
-  Button,
-  TextInput,
-  SafeAreaView,
-} from 'react-native';
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import AuthStackNavigator from './src/navigation/AuthStackNavigator';
 
 function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.inputContainer}>
-        <TextInput style={styles.input} />
-        <Text>text</Text>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <AuthStackNavigator />
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'yellow',
+    flex: 1,
     // margin: '10%',
     // marginHorizontal: 10,
     // marginVertical: 10,
   },
   input: {
+    flex: 1,
     borderWidth: 2,
     borderColor: 'black',
     height: 100,
     width: 100,
   },
   inputContainer: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 
